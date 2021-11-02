@@ -22,23 +22,23 @@ maindrec: main.o libclassrec.so
 #make loops:
 advancedClassificationLoop.o: advancedClassificationLoop.c NumClass.h
 	$(CC) $(CFLAGS) -c advancedClassificationLoop.c -lm
-libclassloops.a: $(OBJECTS_LOOP)
+loops libclassloops.a: $(OBJECTS_LOOP)
 	$(AR) -rcs libclassloops.a $(OBJECTS_LOOP)
 #make recursives:
 basicClassification.o: basicClassification.c NumClass.h
 	$(CC) $(CFLAGS) -c basicClassification.c -lm
 advancedClassificationRecursion.o: advancedClassificationRecursion.c NumClass.h
 	$(CC) $(CFLAGS) -c advancedClassificationRecursion.c -lm
-libclassrec.a: $(OBJECTS_REC)
+recursives libclassrec.a: $(OBJECTS_REC)
 	$(AR) -rcs libclassrec.a $(OBJECTS_REC)
 #make recursived:
-libclassrec.so: $(OBJECTS_REC)
+recursived libclassrec.so: $(OBJECTS_REC)
 	$(CC) -shared -o libclassrec.so $(OBJECTS_REC)
 #make loopd:
-libclassloops.so: $(OBJECTS_LOOP) NumClass.h
+loopd libclassloops.so: $(OBJECTS_LOOP) NumClass.h
 	$(CC) -shared -o libclassloops.so $(OBJECTS_LOOP)
 
-.PHONY: clean all
+.PHONY: clean all loops
 
 clean:
 	rm -f *.o *.a *.so mains maindrec maindloop
