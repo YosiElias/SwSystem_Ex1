@@ -10,8 +10,7 @@ int isArmstrongRec(int n, int sum, int pw) {
     dig=n%10;    
     sum += pow(dig, pw);       
     n /= 10;
-    isArmstrongRec(n, sum, pw);
-    return 0;
+    return isArmstrongRec(n, sum, pw);
 }
 int isArmstrong(int n){
     int temp, pw=0, sum;    
@@ -37,8 +36,7 @@ int isPalindromeRec(int n, int r){
    } 
     r=r*10+(n%10);
     n=n/10;
-    isPalindromeRec(n, r);
-    return 0;
+    return isPalindromeRec(n, r);
 }
 int isPalindrome(int x){
     int r=0,n=x;
