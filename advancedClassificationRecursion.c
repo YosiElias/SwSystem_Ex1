@@ -46,5 +46,5 @@ int isPalindrome(int x){
     if (x==r){
         return 1;
     }
-    //return 0;
+    return 0;
 }
