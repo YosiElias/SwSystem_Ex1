@@ -38,7 +38,7 @@ int isPalindromeRec(int n, int r){
     r=r*10+(n%10);
     n=n/10;
     isPalindromeRec(n, r);
-    return 0;
+    //return 0;
 }
 int isPalindrome(int x){
     int r=0,n=x;
@@ -46,5 +46,5 @@ int isPalindrome(int x){
     if (x==r){
         return 1;
     }
-    return 0;
+    //return 0;
 }
