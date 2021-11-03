@@ -12,13 +12,22 @@ int isArmstrongRec(int n, int sum, int pw) {
     n /= 10;
     return isArmstrongRec(n, sum, pw);
 }
+int numdig(int n){
+    if(n<10){
+        return 1;
+    }
+    else{
+        return 1 + numdig(n/10);
+    }
+}
 int isArmstrong(int n){
     int temp, pw=0, sum;    
-    temp=n;  
-    while (n != 0) {    // save the number of digits of n to power the digit after
-       n /= 10;
-       pw += 1;
-   } 
+    temp=n;
+    pw = numdig(n);  
+//     while (n != 0) {    // save the number of digits of n to power the digit after
+//        n /= 10;
+//        pw += 1;
+//    } 
    n =temp;
     sum = isArmstrongRec(n, 0, pw);    
     if (temp==sum){
