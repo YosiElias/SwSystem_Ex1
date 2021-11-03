@@ -3,11 +3,8 @@
 
 /* will return if a number is prime*/
 int isPrime(int n){
-    if (n==4){
-        return 0;
-    }
     int i=2;
-    while(i*i<n){
+    while(i*i<=n){
         if (n%i==0){
             return 0;
         }
