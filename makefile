@@ -10,15 +10,15 @@ all: mains maindrec maindloop libclassloops.a
 
 #make mains:
 main.o: main.c NumClass.h
-	$(CC) $(FLAGS) -c main.c
+	$(CC) $(CFLAGS) -c main.c
 mains: main.o libclassrec.a 
-	$(CC) $(FLAGS) -o mains main.o libclassrec.a -lm
+	$(CC) $(CFLAGS) -o mains main.o libclassrec.a -lm
 #make maindloop:
 maindloop: main.o libclassloops.so
-	$(CC) $(FLAGS) -o maindloop main.o ./libclassloops.so -lm
+	$(CC) $(CFLAGS) -o maindloop main.o ./libclassloops.so -lm
 #make maindrec:
 maindrec: main.o libclassrec.so
-	$(CC) $(FLAGS) -o maindrec main.o ./libclassrec.so -lm
+	$(CC) $(CFLAGS) -o maindrec main.o ./libclassrec.so -lm
 #make loops:
 advancedClassificationLoop.o: advancedClassificationLoop.c NumClass.h
 	$(CC) $(CFLAGS) -c advancedClassificationLoop.c -lm
