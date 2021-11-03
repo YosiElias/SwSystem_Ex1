@@ -6,7 +6,7 @@ OBJECTS_LOOP = advancedClassificationLoop.o basicClassification.o
 OBJECTS_REC = advancedClassificationRecursion.o basicClassification.o 
 
 #make all
-all: mains maindrec maindloop libclassloops.a
+all: mains maindrec maindloop loops
 
 #make mains:
 main.o: main.c NumClass.h
@@ -38,7 +38,7 @@ recursived libclassrec.so: $(OBJECTS_REC)
 loopd libclassloops.so: $(OBJECTS_LOOP) NumClass.h
 	$(CC) -shared -o libclassloops.so $(OBJECTS_LOOP)
 
-.PHONY: clean all loops
+.PHONY: clean all
 
 clean:
 	rm -f *.o *.a *.so mains maindrec maindloop
