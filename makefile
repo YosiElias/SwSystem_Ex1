@@ -6,7 +6,7 @@ OBJECTS_LOOP = advancedClassificationLoop.o basicClassification.o
 OBJECTS_REC = advancedClassificationRecursion.o basicClassification.o 
 
 #make all
-all: mains maindrec maindloop loops
+all: mains maindrec maindloop
 
 #make mains:
 main.o: main.c NumClass.h
